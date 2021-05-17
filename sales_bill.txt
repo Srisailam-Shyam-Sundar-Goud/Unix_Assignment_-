@@ -1,0 +1,21 @@
+#!/bin/bash
+  
+read -p "enter purchase amount :" pur_amt
+
+if [ "$pur_amt" -lt 1000 ]
+then
+        tax=$((pur_amt*2/100))
+        dis=$((pur_amt*10/100))
+        final=$((pur_amt-dis))
+        final1=$((final+tax))
+
+        echo "Your tax is $tax and discount is $dis the final bill is : $final1"
+elif [ "$pur_amt" -gt 1000 ]
+then
+        tax=$((pur_amt*5/100))
+        dis=$((pur_amt*20/100))
+        final=$((pur_amt-dis))
+        final1=$((final+tax))
+        echo "Your tax is $tax and discount is $dis the final bill is : $final1"
+
+fi
